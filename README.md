@@ -1,281 +1,300 @@
 # Essential Linux Commands
+
+## Table of Contents
+
+- [Essential Linux Commands](#essential-linux-commands)
+  - [Objective](#objective)
+- [1. Basic Commands](#1-basic-commands)
+  - [1.1 Navigation and File Operations](#11-navigation-and-file-operations)
+    - [i. 'pwd' Command - Print Working Directory](#i-pwd-command---print-working-directory)
+    - [ii. 'ls' Command - List directory contents](#ii-ls-command---list-directory-contents)
+    - [iii. 'cd' Command - Change directory](#iii-cd-command---change-directory)
+    - [iv. 'cp' Command - Copy files or directories](#iv-cp-command---copy-files-or-directories)
+    - [v. 'mv' Command - Move/rename files or directories](#v-mv-command---move-or-rename-files-or-directories)
+    - [vi. 'rm' Command - Remove files or directories](#vi-rm-command---remove-files-or-directories)
+    - [vii. 'mkdir' Command - Create a new directory](#vii-mkdir-command---create-a-new-directory)
+    - [viii. 'touch' Command - Create an empty file or update the timestamp](#viii-touch-command---create-an-empty-file-or-update-the-timestamp)
+  - [1.2 Viewing and Editing Files](#12-viewing-and-editing-files)
+    - [i. 'cat' Command - Concatenate and display file content](#i-cat-command---concatenate-and-display-file-content)
+    - [ii. 'more' Command - View file content interactively](#ii-more-command---view-file-content-interactively)
+    - [iii. 'less' Command - View file content interactively with more options](#iii-less-command---view-file-content-interactively-with-more-options)
+    - [iv. 'head' Command - View the first few lines of a file](#iv-head-command---view-the-first-few-lines-of-a-file)
+    - [v. 'tail' Command - View the last few lines of a file](#v-tail-command---view-the-last-few-lines-of-a-file)
+    - [vi. 'Nano' & 'vi' - Simple text editors](#vi-nano-and-vi---simple-text-editors)
+- [2. Intermediate Commands](#2-intermediate-commands)
+  - [2.1 File Permissions and Ownership](#21-file-permissions-and-ownership)
+    - [i. 'chmod' Command - Change file modes or Access Control Lists](#i-chmod-command---change-file-modes-or-access-control-lists)
+    - [ii. 'chown' Command - Change file owner and group](#ii-chown-command---change-file-owner-and-group)
+    - [iii. 'chgrp' Command - Change group ownership](#iii-chgrp-command---change-group-ownership)
+  - [2.2 Searching and Finding Files](#22-searching-and-finding-files)
+    - [i. 'find' Command - Search for files in a directory hierarchy](#i-find-command---search-for-files-in-a-directory-hierarchy)
+    - [ii. 'grep' Command - Search text using patterns](#ii-grep-command---search-text-using-patterns)
+    - [iii. 'locate' Command - Find files by name](#iii-locate-command---find-files-by-name)
+- [3. System Administration](#3-system-administration)
+  - [3.1 'sudo' Command - Execute a command as another user](#31-sudo-command---execute-a-command-as-another-user)
+    - [i. Running a Command as Root](#i-running-a-command-as-root)
+    - [ii. Running a Command as a Specific User](#ii-running-a-command-as-a-specific-user)
+
 ## Objective
-This documentation manual aims to offer a step by step guide on basic Linux commands for Linux users to master a skillset for an effective and productive use of Linux environment on file management, navigation, text editing, and system administration tasks. It introduces the basic to intermediate commands on the Linux command line with explanations, syntax examples, and use cases to enhance your competence of system management using the Linux command-line.
+This documentation manual aims to offer a step-by-step guide on basic Linux commands for users to master a skillset for effective and productive use of the Linux environment. It covers file management, navigation, text editing, and system administration tasks, introducing basic to intermediate commands with explanations, syntax examples, and use cases to enhance your competence in system management using the Linux command line.
+
 # 1. Basic Commands
-## 1.1  Navigation and File Operations
-Navigation and file operations in Linux involve a set of essential commands that allow users to interact with the filesystem
-## i. 'pwd' Command - Print Working Directory
-pwd, an acronym for "present working directory," displays the current directory's full path.
+## 1.1 Navigation and File Operations
+Navigation and file operations in Linux involve a set of essential commands that allow users to interact with the filesystem.
 
-pwd command syntax:`pwd`
+### i. 'pwd' Command - Print Working Directory
+The `pwd` command displays the current directory's full path.
+
+Syntax: `pwd`
+
 ![pwd command](./img/01.png)
-## ii. 'ls' Command - List directory contents
-The ls command lists files and directories in the current directory. 
 
-ls command syntax:`ls`
+### ii. 'ls' Command - List directory contents
+The `ls` command lists files and directories in the current directory.
+
+Syntax: `ls`
+
 ![ls command](./img/02.png)
 
-For example, ls -a displays all files, including hidden ones.
+For example, `ls -a` displays all files, including hidden ones.
 
-command syntax:`ls -a`
-![ls -a command](./img/03.png) 
-## iii. 'cd' Command - Change directory
-The cd command, short for "change directory," allows users to switch directories. If no directory is specified, it defaults to the user's home directory.
+Syntax: `ls -a`
 
-cd command syntax:`cd [directory]`
+![ls -a command](./img/03.png)
+
+### iii. 'cd' Command - Change directory
+The `cd` command allows users to switch directories. If no directory is specified, it defaults to the user's home directory.
+
+Syntax: `cd [directory]`
+
 ![cd command](./img/04.png)
-## iv. 'cp' Command - Copy files or directories
-The cp command copies files or directories to a specified location, useful for creating backups or duplicating data.
 
-cp command syntax:`cp [option] source destination`
+### iv. 'cp' Command - Copy files or directories
+The `cp` command copies files or directories to a specified location, useful for creating backups or duplicating data.
 
-`cp filename.txt /path/to/destination/`
+Syntax: `cp [option] source destination`
 
-![cp command](./img/05.png) 
+Example: `cp filename.txt /path/to/destination/`
 
-To confirm the file was copied to the Downloads directory, use the cd command to navigate to the destination (Downloads) directory and list the contents with the ls command.
+![cp command](./img/05.png)
+
+To confirm the file was copied, use the `cd` command to navigate to the destination directory and list the contents with `ls`.
+
 ![cp confirmation](./img/06.png)
-## v. 'mv' Command - Move/rename files or directories
-The mv command moves or renames files and directories. If the destination exists, it will be overwritten.
 
-mv command syntax: `mv [options] source destination`
-![mv command](./img/07.png) 
+### v. 'mv' Command - Move/rename files or directories
+The `mv` command moves or renames files and directories. If the destination exists, it will be overwritten.
 
-Use the ls command to verify the mv command operation. 
+Syntax: `mv [options] source destination`
+
+![mv command](./img/07.png)
+
+Use the `ls` command to verify the `mv` command operation.
+
 ![mv confirmation](./img/08.png)
-## vi. 'rm' Command - Remove files or directories
-The rm command deletes files or directories. Multiple files can be removed simultaneously. ls command used to verify the rm command.
 
-rm command syntax: `rm [options] file(s)`
+### vi. 'rm' Command - Remove files or directories
+The `rm` command deletes files or directories. Multiple files can be removed simultaneously.
 
-to remove a single file syntax: `rm filename.txt`
-![rm command](./img/9.png)
+Syntax: `rm [options] file(s)`
 
-to remove multiple file syntax: `rm file1.txt file2.txt file3.txt`
-![rm multiple files command](./img/10a.png)
+To remove a single file:
+`rm filename.txt`
 
-to remove directory syntax: `rm -r directoryname`
-![rm director files command](./img/10b.png)
+![rm command](./img/09.png)
 
-to force remove a file or directory without prompting for confirmation: `rm -f filename.txt`
+To remove multiple files:
+`rm file1.txt file2.txt file3.txt`
+
+![rm multiple files command](./img/10.png)
+
+To remove a directory:
+`rm -r directoryname`
+
+![rm directory command](./img/10b.png)
+
+To force remove a file or directory without prompting for confirmation:
+`rm -f filename.txt`
+
 ![rm files/director command](./img/10c.png)
 
-to force remove a directory and its contents without prompting for confirmation: `rm -rf directoryname`
-![rm director with content command](./img/10d.png)
+To force remove a directory and its contents without prompting for confirmation:
+`rm -rf directoryname`
 
-## vii. 'mkdir' Command - Create a new directory
-The mkdir command creates new directories. Multiple directories an be created simultaneously.
+![rm directory with content command](./img/10d.png)
 
-mkdir command syntax: `mkdir directory.name`
-![mkdir command](./img/11.png) 
+### vii. 'mkdir' Command - Create a new directory
+The `mkdir` command creates new directories. Multiple directories can be created simultaneously.
 
-Use the ls command to verify the mkdir command operation.
+Syntax: `mkdir directory.name`
+
+![mkdir command](./img/11.png)
+
+Use the `ls` command to verify the `mkdir` command operation.
+
 ![mkdir confirmation](./img/12.png)
 
-## viii. 'touch' Command - Create an empty file or update the timestamp
-The touch command creates an empty file or updates the timestamp of an existing file.
+### viii. 'touch' Command - Create an empty file or update the timestamp
+The `touch` command creates an empty file or updates the timestamp of an existing file.
 
-touch command syntax: `touch file.name`
+Syntax: `touch file.name`
+
 ![touch command](./img/13.png)
 
-Use the ls command to verify the touch command operation.
-![touch confirmation](./img/14.png)
-## 1.2 Viewing and Editing Files
-There are bunch of Linux commands and text editors that come in handy when you need to check out or make changes, to files. Tools like cat, more, less, head and tail help you peek into file contents in ways. When it comes to editing nano is an user friendly text editor option while vi caters to those looking for advanced functionalities. These tools are crucial for navigating through files, in a Linux setup.
-## i. 'cat' command - Concatenate and display file content
-cat, short for "concatenate," reads, combines, and displays file contents. Use cat followed by the file name to execute.
+Use the `ls` command to verify the `touch` command operation.
 
-cat command syntax:`cat filename.txt`
+![touch confirmation](./img/14.png)
+
+## 1.2 Viewing and Editing Files
+Linux offers various commands and text editors to view and edit files. Commands like `cat`, `more`, `less`, `head`, and `tail` are useful for viewing file contents, while `nano` and `vi` are popular text editors for making changes.
+
+### i. 'cat' Command - Concatenate and display file content
+The `cat` command reads, combines, and displays file contents.
+
+Syntax: `cat filename.txt`
+
 ![cat command](./img/15.png)
 
-## ii. 'more' command - View file content interactively
-more command displays the contents of a file, one screen at a time in the terminal. It’s useful if you have a large ﬁle. For instance, cat displays the entire contents of a file all at once. Using more, you navigate through the ﬁle, page by page. It’s quite handy for large ﬁles.
+### ii. 'more' Command - View file content interactively
+The `more` command displays the contents of a file one screen at a time. It’s useful for large files.
 
-more command syntax:`more filename.txt`
+Syntax: `more filename.txt`
+
 ![more command](./img/16.png)
 
-Excuting more command with large file
-![more command with large file](./img/17.png)
-### Key Navigation for more command
-    - Press 'Space' to move to the next page.
-    - Press 'Enter' to move to the next line.
-    - Press 'b' to move back one page.
-    - Press 'q' to quit the more viewer.
-## iii. 'less' command - View file content interactively with more options
-The less command works similar to the more command in the terminal, but with more advanced features. It allows not just forward but backward navigation through the file as well.
+Using `more` with a large file:
 
-less command syntax:`less filename.txt`
+![more command with large file](./img/17.png)
+
+**Key Navigation for `more` command:**
+- Press `Space` to move to the next page.
+- Press `Enter` to move to the next line.
+- Press `b` to move back one page.
+- Press `q` to quit the `more` viewer.
+
+### iii. 'less' Command - View file content interactively with more options
+The `less` command allows both forward and backward navigation through a file with advanced features.
+
+Syntax: `less filename.txt`
+
 ![less command](./img/18.png)
 ![less command view](./img/19.png)
-### Key Navigation for less command
-    - 'Space' or 'f' to move forward one page.
-    - 'b' to move backward one page.
-    - 'Enter' to move forward one line.
-    - 'y' to move backward one line.
-    - 'n' to repeat the last search forward.
-    - 'N' to repeat the last search backward.
-    - 'q' to quit the viewer.
-## iv. 'head' command - View the first few lines of a file
-The head command shows the first few lines of a file. You can specify the number of lines from the command line with an option.
 
-head command syntax: `head [Option] filename.txt`
+**Key Navigation for `less` command:**
+- `Space` or `f` to move forward one page.
+- `b` to move backward one page.
+- `Enter` to move forward one line.
+- `y` to move backward one line.
+- `n` to repeat the last search forward.
+- `N` to repeat the last search backward.
+- `q` to quit the viewer.
+
+### iv. 'head' Command - View the first few lines of a file
+The `head` command shows the beginning of a file. By default, it displays the first 10 lines.
+
+Syntax: `head filename.txt`
+
 ![head command](./img/20.png)
 
-## v. 'tail' command - View the last few lines of a file
-The tail command prints the last 10 lines of a file, useful for reviewing newly-written data or to check error messages.
+To view a specific number of lines, use `-n` followed by the number of lines:
 
-tail command syntax: `tail [Option] filename.txt`
-![tail command](./img/21.png)
+Syntax: `head -n 20 filename.txt`
 
-## vi. 'Nano' & 'vi' - Simple text editor
-Two of the most widely used Linux text editors are nano and vi, each with advantages and disadvantages of their own. Nano is incredibly user-friendly and basic. Nano is great for binners who just wants to open a text file, make a few quick changes, and close it, this is ideal. With its very clear screen and commands that can be executed on it for simple editing and navigation, Nano doesn't require any prior knowledge to begin using. On the other hand, vi is incredibly configurable and powerful. Power users discover that it becomes incredibly simple to use because it has so many power features and shortcuts. Thus, vi can be used to make intricate changes to a file.
-#### To execute 'nano' command
-nano command syntax: `filename.txt`
-![nano command](./img/22.png)
-![tail command1](./img/23.png)
-#### Key Commands
-    - ^G (Ctrl + G): Display help
-    - ^O (Ctrl + O): Write out (save) the file
-    - ^X (Ctrl + X): Exit Nano
-    - ^W (Ctrl + W): Search within the file
-    - ^K (Ctrl + K): Cut text
-    - ^U (Ctrl + U): Paste text
-    - ^C (Ctrl + C): Show the current cursor position
-    - ^\ (Ctrl + ): Replace text
- To save the changes, press Ctrl + O, then press enter to exit. To close Nano, press Ctrl + X. If you have unsaved changes, you’ll be prompted to save them before Nano exits.
-#### To execute 'vi' command
-Basic Vi Modes:
-Normal Mode: For navigation and text manipulation (default mode when Vim starts).
-Insert Mode: For text entry (press i to enter this mode from Normal Mode).
-Command-Line Mode: For executing commands (press : to enter this mode from Normal Mode).
+![head command with line count](./img/21.png)
 
-vi command syntax: `vi filename.txt`
-![vi command](./img/24.png)
+### v. 'tail' Command - View the last few lines of a file
+The `tail` command shows the end of a file. By default, it displays the last 10 lines.
 
-vi Key Commands:
-#### In Normal Mode:
-    - i: Switch to Insert Mode at cursor position.
-    - Esc: Switch back to Normal Mode.
-    - :w: Save the file.
-    - :q: Quit Vim.
-    - :wq: Save and quit Vim.
-    - :q!: Quit without saving changes.
-#### In Insert Mode:
-    - Esc: Switch back to Normal Mode.
-#### Command-Line Mode:
-    - :w: Save the file.
-    - :q: Quit Vim.
-    - :wq: Save and quit Vim.
-    - :q!: Quit without saving changes.
+Syntax: `tail filename.txt`
 
-# 2. Intermediate Commands
-## 2.1 File Permissions and Ownership
-## i. 'chmod' command - Change file modes or Access Control Lists
-The chmod command changes file or directory permissions, such as read, write, and execute.
-chmod command syntax: `chmod [who][operator][permission] file`
-### who: Specifies the user classes whose permissions you are modifying. It can be:
-    - u for the file owner (user)
-    - g for the group
-    - o for others (everyone else)
-    - a for all (user, group, and others)
-### operator: Specifies how the permission should be changed. It can be:
-    - + to add permissions
-    - - to remove permissions
-    - = to set exact permissions
-### permission: Specifies the permission to be changed. It can be:
-    - r for read
-    - w for write
-    - x for execute
-Example: `chmod u+x file.txt` [This command adds execute permission for the file owner]
-Set permissions to read, write, and execute for owner, and read and execute for group and others:
-![set permission](./img/26.png)
+![tail command](./img/22.png)
 
-## ii. 'chown' command - Change file owner and group
-The chown command changes the ownership of a file, directory, or symbolic link to a specified user.
+To view a specific number of lines, use `-n` followed by the number of lines:
 
-chown command syntax: `chown [OPTIONS] USER[:GROUP] FILE...`
+Syntax: `tail -n 20 filename.txt`
 
-    - USER: The username or user ID (UID) of the new owner.
-    - GROUP: The group name or group ID (GID) of the new group. This is
-      optional
-    - FILE...: One or more files or directories to change ownership.
+![tail command with line count](./img/23.png)
 
-Change the owner of a file syntax: `chown newowner filename`
+### vi. 'Nano' & 'vi' - Simple text editors
+Both `nano` and `vi` are text editors for editing files directly from the terminal.
 
-Change the owner and group of a file syntax: `chown newowner:newgroup filename`
+#### Nano:
+To open a file with `nano`, use:
 
-Change the owner of a directory and its contents recursively syntax: `chown -R newowner directory`
+Syntax: `nano filename.txt`
 
-Change only the group of a file: `chown :newgroup filename`
+![nano command](./img/24.png)
 
-## iii. 'chgrp' command - Change group ownership
-The chgrp command in Linux is used to change the group ownership of files and directories
-chgrp syntax command: `chgrp [OPTION] GROUP FILE...`
-### Options
-    - -c, --changes: Report when a change is made.
-    - -f, --silent, --quiet: Suppress most error messages.
-    - -R, --recursive: Operate on files and directories recursively.
-    - and so on.
-Change the group of a single file syntax: `chgrp newgroup filename`
+#### vi:
+To open a file with `vi`, use:
 
-Change the group of multiple files syntax: `Change the group of multiple files`
+Syntax: `vi filename.txt`
 
-Change the group of a directory syntax: `chgrp newgroup directoryname`
+![vi command](./img/25.png)
 
-Change the group recursively syntax: `chgrp -R newgroup directoryname`
+## 2. Intermediate Commands
+### 2.1 File Permissions and Ownership
+File permissions and ownership in Linux are crucial for controlling access and security.
+
+### i. 'chmod' Command - Change file modes or Access Control Lists
+The `chmod` command changes the permissions of a file or directory.
+
+Syntax: `chmod [options] mode file`
+
+![chmod command](./img/26.png)
+
+### ii. 'chown' Command - Change file owner and group
+The `chown` command changes the owner and group of a file or directory.
+
+Syntax: `chown [owner][:group] file`
+
+![chown command](./img/27.png)
+
+### iii. 'chgrp' Command - Change group ownership
+The `chgrp` command changes the group ownership of a file or directory.
+
+Syntax: `chgrp group file`
+
+![chgrp command](./img/28.png)
 
 ## 2.2 Searching and Finding Files
-## i. 'find' command - Search for files in a directory hierarchy
-The find command searches for files within a specified directory and can perform subsequent operations on them.
-find command syntax" `find [path] [expression]`
-![find command](./img/27.png)
+Finding and searching for files efficiently can be achieved using commands like `find`, `grep`, and `locate`.
 
-## ii. 'grep' command - Search text using patterns
-The grep command searches for specific text within files, returning lines that match the search criteria.
+### i. 'find' Command - Search for files in a directory hierarchy
+The `find` command searches for files in a directory hierarchy.
 
-The basic syntax for grep is: `grep [options] pattern [file...]`
+Syntax: `find [path] [expression]`
 
-    - pattern: The text pattern to search for.
-    - file...: One or more files to search. 
-## Commonly Used Options
-Here are some commonly used options with grep:
+![find command](./img/29.png)
 
-     -i: Ignore case distinctions in both the pattern and the input
-         files
-     -v: Invert the match, showing lines that do not match the
-         pattern
-     -r or -R: Recursively search directories.
-     -l: List filenames containing the match.
-     -c: Count the number of matching lines.
+### ii. 'grep' Command - Search text using patterns
+The `grep` command searches for patterns within files.
 
-Example of grep syntax: `grep "hello" file.txt`
+Syntax: `grep [options] pattern file`
 
-Case-Insensitive Search syntax: `grep -i "hello" file.txt`
+![grep command](./img/30.png)
 
-## iii. 'locate' command - Find files by name
-The locate command searches for files by name. Adding the -i argument makes the search case-insensitive.
+### iii. 'locate' Command - Find files by name
+The `locate` command quickly finds files by name using a database.
 
-The basic locate syntax: `locate [options] pattern`
+Syntax: `locate filename`
 
-Common Examples:
-Basic Usage: Find a file by its name: `locate filename`
+![locate command](./img/31.png)
 
-Case-Insensitive Search: Use the -i option to perform a case-insensitive search: `locate -i filename`
+## 3. System Administration
+### 3.1 'sudo' Command - Execute a command as another user
+The `sudo` command allows users to execute commands with superuser or another user’s privileges.
 
-# 3.0 System Administration
-## 3.1 'sudo' command- Execute a command as another user
-The basic syntax of the sudo command is: `sudo [OPTION] COMMAND [ARGUMENTS...]`
+#### i. Running a Command as Root
+To run a command as the root user, prepend `sudo`:
 
-## i. Running a Command as Root
-To run a command as the root user: `sudo command`
-Example: `sudo apt-get update`
+Syntax: `sudo command`
 
-## ii. Running a Command as a Specific User
-To run a command as a specific user, use the -u option: `sudo -u username command`
-Example: `sudo -u mark ls /home/mark`
+![sudo command](./img/32.png)
 
-## Common Options: 
-    - -u: Specify a user to run as. Default is root.
-    - -i: Start a shell as the target user.
-    - -k or --reset-timestamp: Invalidate the user's sudo timestamp.
-    - and many more.
+#### ii. Running a Command as a Specific User
+To run a command as a specific user:
+
+Syntax: `sudo -u username command`
+
+![sudo specific user command](./img/33.png)
